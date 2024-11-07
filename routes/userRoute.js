@@ -1,5 +1,4 @@
 const express=require("express");
-const mongoose=require("mongoose");
 const User=require("../models/userModel");
 const router=express.Router();
 
@@ -24,7 +23,7 @@ router.post("/",async(req,res)=>{
   router.get("/", async (req, res) => {
   try {
     const showAll = await User.find();
-    res.status(200).json(showAll); // Use 200 status code for success
+    res.status(200).json(showAll); 
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
